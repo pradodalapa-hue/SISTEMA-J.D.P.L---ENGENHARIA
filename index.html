@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="./manifest.json">
+
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title"SISTEMA J.D.P.L - ENGENHARIA</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192x192.png">
+    <link rel="apple-touch-icon" href="./icons/icon-192x192.png">
+    <title>SISTEMA J.D.P.L - ENGENHARIA</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #FFD700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .terminal-box {
+            border: 1px solid #FFD700;
+            padding: 30px;
+            max-width: 500px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+        }
+
+        h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #FFD700;
+            padding-bottom: 10px;
+        }
+
+        .input-area {
+            margin: 20px 0;
+        }
+
+        input {
+            background: #111;
+            border: 1px solid #FFD700;
+            color: #FFD700;
+            padding: 10px;
+            width: 80%;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .btn-eng {
+            background-color: #FFD700;
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .btn-eng:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.8em;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="terminal-box">
+        <h2>CENTRAL HELENA</h2>
+        <p>Operador: José Divino Prado da Lapa</p>
+        
+        <div class="input-area">
+            <input type="text" id="cmd" placeholder="Digite o comando do bem...">
+        </div>
+
+        <button class="btn-eng" onclick="processar()">Executar Módulo</button>
+
+        <footer>
+            PROJETO: DAR O MEU MELHOR | 2026
+        </footer>
+    </div>
+
+    <script>
+        function processar() {
+            const comando = document.getElementById('cmd').value;
+            alert("O Engenheiro Estudante processou: " + comando);
+            console.log("Comando enviado para o núcleo Jalhica IA.");
+        }
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      // Aqui o index.html diz: "O vigia está registrado com sucesso!"
+      console.log('Servo registrado com sucesso no escopo: ', registration.scope);
+    }, function(err) {
+      // Se der erro, ele avisa aqui
+      console.log('O registro do servo falhou: ', err);
+    });
+  });
+}
+
+    </script>
+</body>
+</html>
